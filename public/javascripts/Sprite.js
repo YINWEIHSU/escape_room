@@ -12,7 +12,7 @@ class Sprite {
     this.shadow = new Image();
     this.useShadow = true; //config.useShadow || false
     if (this.useShadow) {
-      this.shadow.src = "/images/maps/empty.png";
+      this.shadow.src = "./public/images/maps/empty.png";
     }
     this.shadow.onload = () => {
       this.isShadowLoaded = true;
@@ -21,7 +21,7 @@ class Sprite {
     //Configure Animation & Initial State
     this.animations = config.animations || {
       idleDown: [
-        [0,0]
+        [0, 0]
       ]
     }
     this.currentAnimation = config.currentAnimation || "idleDown";
@@ -38,10 +38,10 @@ class Sprite {
 
     this.isShadowLoaded && ctx.drawImage(this.shadow, x, y);
     this.isLoaded && ctx.drawImage(this.image,
-      0,0,
-      32,32,
+      0, 0,
+      32, 32,
       x, y,
-      32,32
+      32, 32
     )
   }
 }
